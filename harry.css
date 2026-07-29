@@ -432,3 +432,60 @@ padding:30px 18px 50px;
     }
 
                               }
+/* ===========================
+   Moving Fog
+=========================== */
+
+.fog,
+.fog2{
+
+    position:fixed;
+
+    top:0;
+
+    left:-50%;
+
+    width:200%;
+
+    height:100%;
+
+    pointer-events:none;
+
+    opacity:.18;
+
+    z-index:1;
+
+    background:
+    radial-gradient(circle at 20% 40%, rgba(255,255,255,.18), transparent 40%),
+    radial-gradient(circle at 70% 60%, rgba(255,255,255,.12), transparent 35%),
+    radial-gradient(circle at 50% 20%, rgba(255,255,255,.10), transparent 30%);
+
+    animation:fogMove 35s linear infinite;
+
+}
+
+.fog2{
+
+    animation-duration:55s;
+
+    opacity:.10;
+
+    transform:scale(1.2);
+
+}
+
+@keyframes fogMove{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(25%);
+
+    }
+
+}
