@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TinyTale</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+background:linear-gradient(180deg,#FFF8EC,#F5EEDC);
+
+font-family:Poppins,sans-serif;
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+overflow:hidden;
+
+}
+
+.container{
+
+text-align:center;
+
+padding:20px;
+
+animation:fadeIn 2s;
+
+}
+
+.logo{
+
+width:180px;
+
+animation:float 4s ease-in-out infinite;
+
+}
+
+h1{
+
+font-family:Cinzel,serif;
+
+font-size:45px;
+
+margin-top:20px;
+
+color:#214A44;
+
+}
+
+.subtitle{
+
+margin-top:12px;
+
+font-size:22px;
+
+color:#214A44;
+
+}
+
+.tagline{
+
+margin-top:12px;
+
+font-size:16px;
+
+color:#666;
+
+}
+
+button{
+
+margin-top:45px;
+
+padding:16px 50px;
+
+font-size:18px;
+
+border:none;
+
+border-radius:50px;
+
+cursor:pointer;
+
+background:#214A44;
+
+color:white;
+
+transition:.35s;
+
+box-shadow:0 0 20px rgba(212,175,55,.25);
+
+}
+
+button:hover{
+
+background:#D4AF37;
+
+color:#214A44;
+
+transform:scale(1.06);
+
+}
+
+@keyframes float{
+
+0%,100%{transform:translateY(0);}
+
+50%{transform:translateY(-12px);}
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<img src="assets/logo.png" class="logo">
+
+<h1>TinyTale</h1>
+
+<p class="subtitle">
+Welcome to My Fairy World
+</p>
+
+<p class="tagline">
+Every story begins with a little magic.
+</p>
+
+<button id="enterBtn">
+ENTER
+</button>
+
+</div>
+
+<script>
+
+document
+.getElementById("enterBtn")
+.addEventListener("click",()=>{
+
+alert("Welcome to TinyTale!");
+
+});
+
+</script>
+
+</body>
+
+</html>
