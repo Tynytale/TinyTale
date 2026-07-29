@@ -6,7 +6,7 @@ button.addEventListener("click", () => {
     transition.style.opacity = "1";
 
     setTimeout(() => {
-        window.location.href = "pages/home.html";
+        window.location.href = "main.html";
     }, 1200);
 
 });
