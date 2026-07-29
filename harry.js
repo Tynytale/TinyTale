@@ -1,7 +1,3 @@
-// ==========================
-// TinyTale - Harry Potter
-// ==========================
-
 const intro = document.getElementById("intro");
 const enterMagic = document.getElementById("enterMagic");
 const mainContent = document.getElementById("mainContent");
@@ -15,7 +11,6 @@ const lockedButtons = document.querySelectorAll(".locked");
 const popup = document.getElementById("popup");
 const closePopup = document.getElementById("closePopup");
 
-// Enter Hogwarts
 enterMagic.addEventListener("click", () => {
 
     bgMusic.play();
@@ -32,21 +27,18 @@ enterMagic.addEventListener("click", () => {
 
 });
 
-// Trailer
 trailerBtn.addEventListener("click", () => {
 
-    window.location.href = "player.html?type=trailer";
+    window.location.href = "player.html?mode=trailer&episode=1";
 
 });
 
-// Episode 1
 episode1Btn.addEventListener("click", () => {
 
-    window.location.href = "player.html?episode=1";
+    window.location.href = "player.html?mode=episode&episode=1";
 
 });
 
-// Locked Episodes
 lockedButtons.forEach(button => {
 
     button.addEventListener("click", () => {
@@ -57,18 +49,17 @@ lockedButtons.forEach(button => {
 
 });
 
-// Close popup
 closePopup.addEventListener("click", () => {
 
     popup.style.display = "none";
 
 });
 
-popup.addEventListener("click", (e) => {
+popup.addEventListener("click", e => {
 
-    if (e.target === popup) {
+    if(e.target===popup){
 
-        popup.style.display = "none";
+        popup.style.display="none";
 
     }
 
