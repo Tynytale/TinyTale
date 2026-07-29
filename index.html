@@ -1,52 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TinyTale | Welcome</title>
 
-<meta charset="UTF-8">
+    <meta name="theme-color" content="#1f3f3a">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<title>TinyTale</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="background"></div>
+    <!-- Background -->
+    <div class="background"></div>
 
-<div class="particles"></div>
+    <!-- Floating Sparkles -->
+    <div class="sparkles">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
-<div class="container">
+    <!-- Main Container -->
+    <main class="container">
 
-<img src="logo.png" alt="TinyTale Logo" class="logo">
+        <img
+            src="logo.jpeg"
+            alt="TinyTale Logo"
+            class="logo"
+        >
 
-<h1>TinyTale</h1>
+        <h1>TinyTale</h1>
 
-<p class="subtitle">
-Welcome to My Fairy World
-</p>
+        <h2>
+            Welcome to My Fairy World
+        </h2>
 
-<p class="tagline">
-Every story begins with a little magic.
-</p>
+        <p class="tagline">
+            Every story begins with a little magic.
+        </p>
 
-<button id="enterBtn">
-ENTER
-</button>
+        <button id="enterBtn">
+            ✨ ENTER ✨
+        </button>
 
-</div>
+    </main>
 
-<script src="app.js"></script>
+    <!-- Transition -->
+    <div id="transition"></div>
+
+    <script src="app.js"></script>
 
 </body>
-
 </html>
