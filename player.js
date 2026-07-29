@@ -96,7 +96,18 @@ story.innerHTML="<h3>Coming Soon...</h3>";
 
 player.src=data.video;
 
-story.innerHTML=data.story;
+fetch(data.story)
+    .then(response => response.text())
+    .then(text => {
+
+        story.innerHTML = text.replace(/\n/g, "<br>");
+
+    })
+    .catch(() => {
+
+        story.innerHTML = "Story unavailable.";
+
+    });
 
 }
 
