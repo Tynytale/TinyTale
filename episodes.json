@@ -1,5 +1,55 @@
 {
-  "title": "Part 1",
-  "video": "https://www.youtube.com/embed/VIDEO_ID",
-  "story": "https://gist.githubusercontent.com/Tynytale/dabbd9cc957672e62bd5162f2b7b5486/raw/89180088c9afcfdeb97227710413fc5f4828980d/part1.txt"
+  "season": 1,
+  "episodes": [
+    {
+      "id": 1,
+      "title": "Harry Potter - Episode 1",
+
+      "trailer": [
+        {
+          "title": "Trailer Part 1",
+          "video": "https://www.youtube.com/embed/VIDEO_ID",
+          "story": "https://gist.githubusercontent.com/Tynytale/dabbd9cc957672e62bd5162f2b7b5486/raw/89180088c9afcfdeb97227710413fc5f4828980d/part1.txt"
+        },
+        {
+          "title": "Trailer Part 2",
+          "video": "",
+          "story": ""
+        },
+        {
+          "title": "Trailer Part 3",
+          "video": "",
+          "story": ""
+        }
+      ],
+
+      "parts": [
+        {
+          "title": "Episode Part 1",
+          "video": "https://www.youtube.com/embed/VIDEO_ID",
+          "story": "https://gist.githubusercontent.com/Tynytale/dabbd9cc957672e62bd5162f2b7b5486/raw/89180088c9afcfdeb97227710413fc5f4828980d/part1.txt"
+        },
+        {
+          "title": "Episode Part 2",
+          "video": "",
+          "story": ""
+        },
+        {
+          "title": "Episode Part 3",
+          "video": "",
+          "story": ""
+        },
+        {
+          "title": "Episode Part 4",
+          "video": "",
+          "story": ""
+        },
+        {
+          "title": "Episode Part 5",
+          "video": "",
+          "story": ""
+        }
+      ]
+    }
+  ]
 }
