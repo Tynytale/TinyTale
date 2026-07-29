@@ -1,61 +1,17 @@
 {
-  "trailers": [
-    {
-      "id": 1,
-      "title": "Character Reveal",
-      "video": "https://www.youtube.com/embed/...",
-      "story": "https://gist.githubusercontent.com/.../character-reveal.txt"
-    },
-    {
-      "id": 2,
-      "title": "Episode 1 Trailer",
-      "video": "https://www.youtube.com/embed/...",
-      "story": "https://gist.githubusercontent.com/.../episode1-trailer.txt"
-    },
-    {
-      "id": 3,
-      "title": "Episode 2 Trailer",
-      "video": "https://www.youtube.com/embed/...",
-      "story": "https://gist.githubusercontent.com/.../episode2-trailer.txt"
-    },
-    {
-      "id": 4,
-      "title": "Episode 3 Trailer",
-      "video": "https://www.youtube.com/embed/...",
-      "story": "https://gist.githubusercontent.com/.../episode3-trailer.txt"
-    },
-    {
-      "id": 5,
-      "title": "Episode 4 Trailer",
-      "video": "https://www.youtube.com/embed/...",
-      "story": "https://gist.githubusercontent.com/.../episode4-trailer.txt"
-    },
-    {
-      "id": 6,
-      "title": "Episode 5 Trailer",
-      "video": "https://www.youtube.com/embed/...",
-      "story": "https://gist.githubusercontent.com/.../episode5-trailer.txt"
-    },
-    {
-      "id": 7,
-      "title": "Episode 6 Trailer",
-      "video": "https://www.youtube.com/embed/...",
-      "story": "https://gist.githubusercontent.com/.../episode6-trailer.txt"
-    }
-  ],
+  "sources": {
+    "trailers": "https://gist.githubusercontent.com/Tynytale/3354c5355607624d3a58decf2afd904e/raw/d5a9c2e5f4a6d10ed159a9b83c7958bf81b9d4cc/trailers.json",
 
-  "episodes": [
-    {
-      "id": 1,
-      "title": "Episode 1",
-      "parts": 100,
-      "gist": "https://gist.githubusercontent.com/.../episode1.json"
-    },
-    {
-      "id": 2,
-      "title": "Episode 2",
-      "parts": 100,
-      "gist": "https://gist.githubusercontent.com/.../episode2.json"
-    }
-  ]
+    "episode1": "https://gist.githubusercontent.com/Tynytale/dff612c6e65a8d6b3a9668838f4e6584/raw/026f3775d9ab2769de96b3f3495888e2508300f7/episode1.json",
+
+    "episode2": "https://gist.githubusercontent.com/Tynytale/1afad54131408405980a1672c6795060/raw/40cea5e0ab39604ed116ac5862419b3d237b0427/episode2.json",
+
+    "episode3": "https://gist.githubusercontent.com/Tynytale/1037a619177cf7aeb4985b721af9e938/raw/afd71be965d7a86aee97ec291030cf72469fa49d/episode3.json",
+
+    "episode4": "https://gist.githubusercontent.com/Tynytale/aab2b6e2825dcaeba896652996f75a25/raw/20b6de9349735be4d7dc9295766e495d3305a246/episode4.json",
+
+    "episode5": "https://gist.githubusercontent.com/Tynytale/0b47e29b2b2c30dc7027b3aa29a46715/raw/8d39030df9c743375e2260d17d8951030c60bd51/episode5.json",
+
+    "episode6": "https://gist.githubusercontent.com/Tynytale/419c120673e3c1f8bce9a5c7f8a119b5/raw/60b4830338a5029aa45312269892545633d04411/episode6.json"
+  }
 }
