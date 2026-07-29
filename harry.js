@@ -2,7 +2,11 @@
 // TinyTale - Harry Potter
 // ==========================
 
-// Buttons
+const intro = document.getElementById("intro");
+const enterMagic = document.getElementById("enterMagic");
+const mainContent = document.getElementById("mainContent");
+const bgMusic = document.getElementById("bgMusic");
+
 const trailerBtn = document.getElementById("trailerBtn");
 const episode1Btn = document.getElementById("episode1Btn");
 
@@ -11,10 +15,26 @@ const lockedButtons = document.querySelectorAll(".locked");
 const popup = document.getElementById("popup");
 const closePopup = document.getElementById("closePopup");
 
+// Enter Hogwarts
+enterMagic.addEventListener("click", () => {
+
+    bgMusic.play();
+
+    intro.style.opacity = "0";
+
+    setTimeout(() => {
+
+        intro.style.display = "none";
+
+        mainContent.style.display = "block";
+
+    }, 1000);
+
+});
+
 // Trailer
 trailerBtn.addEventListener("click", () => {
 
-    // Future trailer page
     window.location.href = "player.html?type=trailer";
 
 });
@@ -22,50 +42,34 @@ trailerBtn.addEventListener("click", () => {
 // Episode 1
 episode1Btn.addEventListener("click", () => {
 
-    // Future episode player
     window.location.href = "player.html?episode=1";
 
 });
 
 // Locked Episodes
-lockedButtons.forEach(button=>{
+lockedButtons.forEach(button => {
 
-    button.addEventListener("click",()=>{
+    button.addEventListener("click", () => {
 
-        popup.style.display="flex";
+        popup.style.display = "flex";
 
     });
 
 });
 
-// Close Popup
-closePopup.addEventListener("click",()=>{
+// Close popup
+closePopup.addEventListener("click", () => {
 
-    popup.style.display="none";
+    popup.style.display = "none";
 
 });
 
-// Close when tapping outside
-popup.addEventListener("click",(e)=>{
+popup.addEventListener("click", (e) => {
 
-    if(e.target===popup){
+    if (e.target === popup) {
 
-        popup.style.display="none";
+        popup.style.display = "none";
 
     }
-
-});
-
-// Page Animation
-window.addEventListener("load",()=>{
-
-    document.body.style.opacity="0";
-    document.body.style.transition="opacity .8s";
-
-    setTimeout(()=>{
-
-        document.body.style.opacity="1";
-
-    },100);
 
 });
