@@ -1,1 +1,247 @@
+/* ===========================
+   TinyTale Player
+=========================== */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:
+    linear-gradient(rgba(8,10,20,.75),rgba(8,10,20,.90)),
+    url("assets/hogwarts.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    color:white;
+
+}
+
+.overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.25);
+
+    backdrop-filter:blur(2px);
+
+    pointer-events:none;
+
+}
+
+.container{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:25px 15px 60px;
+
+}
+
+h1{
+
+    text-align:center;
+
+    font-family:'Cinzel',serif;
+
+    color:#FFD700;
+
+    font-size:34px;
+
+    text-shadow:0 0 15px gold;
+
+}
+
+.subtitle{
+
+    text-align:center;
+
+    margin-top:10px;
+
+    color:#dddddd;
+
+    margin-bottom:30px;
+
+}
+
+.video-card{
+
+    width:100%;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:0 15px 40px rgba(0,0,0,.45);
+
+}
+
+.video-card iframe{
+
+    width:100%;
+
+    aspect-ratio:16/9;
+
+    border:none;
+
+}
+
+.story-card{
+
+    margin-top:25px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:20px;
+
+    padding:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+
+}
+
+.story-card h2{
+
+    color:#FFD700;
+
+    margin-bottom:15px;
+
+    font-family:'Cinzel',serif;
+
+}
+
+#storyContent{
+
+    line-height:1.9;
+
+    color:#f2f2f2;
+
+}
+
+.navigation{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:25px;
+
+}
+
+.navigation button{
+
+    flex:1;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#D4AF37;
+
+    color:#13231F;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.navigation button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 0 18px gold;
+
+}
+
+.parts{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:12px;
+
+    margin-top:30px;
+
+}
+
+.part{
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:#3f3f3f;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.part:hover{
+
+    background:#D4AF37;
+
+    color:#13231F;
+
+}
+
+.active{
+
+    background:#FFD700;
+
+    color:#13231F;
+
+}
+
+@media(max-width:600px){
+
+.parts{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+h1{
+
+font-size:28px;
+
+}
+
+.navigation{
+
+flex-direction:column;
+
+}
+
+}
