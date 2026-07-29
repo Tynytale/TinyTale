@@ -4,15 +4,14 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Player | TinyTale</title>
+<title>TinyTale Player</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="player.css">
 
@@ -24,21 +23,16 @@
 
 <div class="container">
 
-<h1 id="episodeTitle">
-Harry Potter
-</h1>
+<h1 id="episodeTitle">Loading...</h1>
 
-<p class="subtitle">
-Season 1 • Episode 1
-</p>
+<p id="episodeType"></p>
 
 <div class="video-card">
 
 <iframe
 id="videoPlayer"
-src=""
-title="TinyTale Player"
-allowfullscreen>
+allowfullscreen
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
 </iframe>
 
 </div>
@@ -49,7 +43,7 @@ allowfullscreen>
 
 <div id="storyContent">
 
-Loading story...
+Loading...
 
 </div>
 
@@ -57,39 +51,13 @@ Loading story...
 
 <div class="navigation">
 
-<button id="prevBtn">
-⬅ Previous Part
-</button>
+<button id="prevBtn">⬅ Previous</button>
 
-<button id="nextBtn">
-Next Part ➜
-</button>
+<button id="nextBtn">Next ➜</button>
 
 </div>
 
-<div class="parts">
-
-<button class="part active">
-Part 1
-</button>
-
-<button class="part">
-Part 2
-</button>
-
-<button class="part">
-Part 3
-</button>
-
-<button class="part">
-Part 4
-</button>
-
-<button class="part">
-Part 5
-</button>
-
-</div>
+<div id="parts" class="parts"></div>
 
 </div>
 
