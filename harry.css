@@ -1,1 +1,261 @@
+/* ===========================
+   TinyTale - Harry Potter
+=========================== */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    min-height:100%;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    background:
+    linear-gradient(rgba(8,12,24,.75),rgba(8,12,24,.85)),
+    url("https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=1600&auto=format&fit=crop");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    color:white;
+
+}
+
+.overlay{
+
+    position:fixed;
+    inset:0;
+
+    backdrop-filter:blur(2px);
+
+}
+
+.container{
+
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+
+    max-width:500px;
+
+    margin:auto;
+
+    padding:40px 20px 60px;
+
+    text-align:center;
+
+}
+
+h1{
+
+    font-family:'Cinzel',serif;
+
+    font-size:38px;
+
+    color:#FFD700;
+
+    margin-top:20px;
+
+    margin-bottom:18px;
+
+    text-shadow:0 0 15px rgba(255,215,0,.45);
+
+}
+
+.container p{
+
+    color:#eeeeee;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+.season-card{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:22px;
+
+    padding:30px 20px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+
+}
+
+.season-card h2{
+
+    font-family:'Cinzel',serif;
+
+    color:#FFD700;
+
+    margin-bottom:25px;
+
+}
+
+.episode-btn,
+.locked{
+
+    width:100%;
+
+    padding:16px;
+
+    margin-top:14px;
+
+    border:none;
+
+    border-radius:50px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.episode-btn{
+
+    background:#D4AF37;
+
+    color:#13231F;
+
+}
+
+.episode-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 0 25px rgba(212,175,55,.7);
+
+}
+
+.locked{
+
+    background:#3a3a3a;
+
+    color:#cfcfcf;
+
+}
+
+.locked:hover{
+
+    background:#555;
+
+}
+
+#popup{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.75);
+
+    z-index:100;
+
+}
+
+.popup-box{
+
+    width:90%;
+
+    max-width:340px;
+
+    background:white;
+
+    color:#222;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    text-align:center;
+
+}
+
+.popup-box h3{
+
+    color:#214A44;
+
+    margin-bottom:12px;
+
+}
+
+.popup-box p{
+
+    color:#555;
+
+    line-height:1.7;
+
+    margin-bottom:25px;
+
+}
+
+#closePopup{
+
+    border:none;
+
+    background:#214A44;
+
+    color:white;
+
+    padding:14px 30px;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+}
+
+#closePopup:hover{
+
+    background:#D4AF37;
+
+    color:#214A44;
+
+}
+
+@media(max-width:768px){
+
+h1{
+
+font-size:30px;
+
+}
+
+.container{
+
+padding:30px 18px 50px;
+
+}
+
+.season-card{
+
+padding:24px 18px;
+
+}
+
+}
