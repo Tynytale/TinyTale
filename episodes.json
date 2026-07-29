@@ -1,78 +1,61 @@
 {
-  "trailer": {
-    "characterReveal": {
+  "trailers": [
+    {
+      "id": 1,
       "title": "Character Reveal",
-      "gist": "GIST_URL",
-      "video": "YOUTUBE_EMBED"
+      "video": "https://www.youtube.com/embed/...",
+      "story": "https://gist.githubusercontent.com/.../character-reveal.txt"
     },
-    "episode1": {
+    {
+      "id": 2,
       "title": "Episode 1 Trailer",
-      "gist": "GIST_URL",
-      "video": "YOUTUBE_EMBED"
+      "video": "https://www.youtube.com/embed/...",
+      "story": "https://gist.githubusercontent.com/.../episode1-trailer.txt"
     },
-    "episode2": {
+    {
+      "id": 3,
       "title": "Episode 2 Trailer",
-      "gist": "GIST_URL",
-      "video": "YOUTUBE_EMBED"
+      "video": "https://www.youtube.com/embed/...",
+      "story": "https://gist.githubusercontent.com/.../episode2-trailer.txt"
     },
-    "episode3": {
+    {
+      "id": 4,
       "title": "Episode 3 Trailer",
-      "gist": "GIST_URL",
-      "video": "YOUTUBE_EMBED"
+      "video": "https://www.youtube.com/embed/...",
+      "story": "https://gist.githubusercontent.com/.../episode3-trailer.txt"
     },
-    "episode4": {
+    {
+      "id": 5,
       "title": "Episode 4 Trailer",
-      "gist": "GIST_URL",
-      "video": "YOUTUBE_EMBED"
+      "video": "https://www.youtube.com/embed/...",
+      "story": "https://gist.githubusercontent.com/.../episode4-trailer.txt"
     },
-    "episode5": {
+    {
+      "id": 6,
       "title": "Episode 5 Trailer",
-      "gist": "GIST_URL",
-      "video": "YOUTUBE_EMBED"
+      "video": "https://www.youtube.com/embed/...",
+      "story": "https://gist.githubusercontent.com/.../episode5-trailer.txt"
     },
-    "episode6": {
+    {
+      "id": 7,
       "title": "Episode 6 Trailer",
-      "gist": "GIST_URL",
-      "video": "YOUTUBE_EMBED"
+      "video": "https://www.youtube.com/embed/...",
+      "story": "https://gist.githubusercontent.com/.../episode6-trailer.txt"
     }
-  },
+  ],
 
   "episodes": [
     {
       "id": 1,
       "title": "Episode 1",
-      "gist": "EPISODE1_GIST",
-      "parts": 100
+      "parts": 100,
+      "gist": "https://gist.githubusercontent.com/.../episode1.json"
     },
     {
       "id": 2,
       "title": "Episode 2",
-      "gist": "EPISODE2_GIST",
-      "parts": 100
-    },
-    {
-      "id": 3,
-      "title": "Episode 3",
-      "gist": "EPISODE3_GIST",
-      "parts": 100
-    },
-    {
-      "id": 4,
-      "title": "Episode 4",
-      "gist": "EPISODE4_GIST",
-      "parts": 100
-    },
-    {
-      "id": 5,
-      "title": "Episode 5",
-      "gist": "EPISODE5_GIST",
-      "parts": 100
-    },
-    {
-      "id": 6,
-      "title": "Episode 6",
-      "gist": "EPISODE6_GIST",
-      "parts": 100
+      "parts": 100,
+      "gist": "https://gist.githubusercontent.com/.../episode2.json"
     }
   ]
 }
