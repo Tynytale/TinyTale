@@ -17,23 +17,121 @@ html,body{
 body{
 
     background:
-    linear-gradient(rgba(8,12,24,.75),rgba(8,12,24,.85)),
-    url("https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=1600&auto=format&fit=crop");
+    linear-gradient(rgba(5,8,20,.55),rgba(5,8,20,.75)),
+    url("./assets/hogwarts.jpg");
 
     background-size:cover;
     background-position:center;
+    background-repeat:no-repeat;
     background-attachment:fixed;
+
+    color:white;
+
+    overflow-x:hidden;
+
+}
+
+/* Dark overlay */
+
+.overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.20);
+
+    pointer-events:none;
+
+}
+
+/* Intro */
+
+#intro{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    background:rgba(0,0,0,.88);
+
+    z-index:9999;
+
+    transition:1s;
+
+}
+
+#intro h1{
+
+    font-family:'Cinzel',serif;
+
+    font-size:42px;
+
+    color:#FFD700;
+
+    text-shadow:0 0 15px gold;
+
+    margin:10px;
+
+}
+
+#intro h2{
+
+    font-family:'Cinzel',serif;
+
+    font-size:22px;
 
     color:white;
 
 }
 
-.overlay{
+#enterMagic{
 
-    position:fixed;
-    inset:0;
+    margin-top:35px;
 
-    backdrop-filter:blur(2px);
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#D4AF37;
+
+    color:#13231F;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+#enterMagic:hover{
+
+    transform:scale(1.06);
+
+    box-shadow:0 0 25px gold;
+
+}
+
+/* Main */
+
+#mainContent{
+
+    display:none;
 
 }
 
@@ -42,8 +140,6 @@ body{
     position:relative;
 
     z-index:2;
-
-    width:100%;
 
     max-width:500px;
 
@@ -55,7 +151,7 @@ body{
 
 }
 
-h1{
+.container h1{
 
     font-family:'Cinzel',serif;
 
@@ -63,23 +159,23 @@ h1{
 
     color:#FFD700;
 
-    margin-top:20px;
+    text-shadow:0 0 12px gold;
 
-    margin-bottom:18px;
-
-    text-shadow:0 0 15px rgba(255,215,0,.45);
+    margin-bottom:20px;
 
 }
 
 .container p{
 
-    color:#eeeeee;
-
     line-height:1.8;
+
+    color:#eeeeee;
 
     margin-bottom:35px;
 
 }
+
+/* Card */
 
 .season-card{
 
@@ -87,13 +183,13 @@ h1{
 
     backdrop-filter:blur(12px);
 
-    border:1px solid rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.15);
 
-    border-radius:22px;
+    border-radius:25px;
 
     padding:30px 20px;
 
-    box-shadow:0 20px 40px rgba(0,0,0,.35);
+    box-shadow:0 15px 40px rgba(0,0,0,.5);
 
 }
 
@@ -112,9 +208,9 @@ h1{
 
     width:100%;
 
-    padding:16px;
+    padding:15px;
 
-    margin-top:14px;
+    margin-top:15px;
 
     border:none;
 
@@ -126,7 +222,7 @@ h1{
 
     cursor:pointer;
 
-    transition:.35s;
+    transition:.3s;
 
 }
 
@@ -142,23 +238,25 @@ h1{
 
     transform:translateY(-3px);
 
-    box-shadow:0 0 25px rgba(212,175,55,.7);
+    box-shadow:0 0 20px gold;
 
 }
 
 .locked{
 
-    background:#3a3a3a;
+    background:#444;
 
-    color:#cfcfcf;
+    color:#ddd;
 
 }
 
 .locked:hover{
 
-    background:#555;
+    background:#666;
 
 }
+
+/* Popup */
 
 #popup{
 
@@ -174,7 +272,7 @@ h1{
 
     background:rgba(0,0,0,.75);
 
-    z-index:100;
+    z-index:999;
 
 }
 
@@ -182,7 +280,7 @@ h1{
 
     width:90%;
 
-    max-width:340px;
+    max-width:350px;
 
     background:white;
 
@@ -198,19 +296,15 @@ h1{
 
 .popup-box h3{
 
-    color:#214A44;
-
-    margin-bottom:12px;
+    margin-bottom:15px;
 
 }
 
 .popup-box p{
 
-    color:#555;
+    margin-bottom:25px;
 
     line-height:1.7;
-
-    margin-bottom:25px;
 
 }
 
@@ -222,7 +316,7 @@ h1{
 
     color:white;
 
-    padding:14px 30px;
+    padding:12px 30px;
 
     border-radius:40px;
 
@@ -230,17 +324,17 @@ h1{
 
 }
 
-#closePopup:hover{
-
-    background:#D4AF37;
-
-    color:#214A44;
-
-}
+/* Mobile */
 
 @media(max-width:768px){
 
-h1{
+#intro h1{
+
+font-size:34px;
+
+}
+
+.container h1{
 
 font-size:30px;
 
@@ -249,115 +343,6 @@ font-size:30px;
 .container{
 
 padding:30px 18px 50px;
-
-}
-
-.season-card{
-
-padding:24px 18px;
-
-}
-
-}
-#intro{
-
-position:fixed;
-
-top:0;
-left:0;
-
-width:100%;
-height:100vh;
-
-display:flex;
-
-flex-direction:column;
-
-justify-content:center;
-
-align-items:center;
-
-text-align:center;
-
-background:rgba(0,0,0,.92);
-
-z-index:9999;
-
-animation:fadeIn 2s;
-
-}
-
-#intro h1{
-
-font-size:42px;
-
-font-family:'Cinzel',serif;
-
-color:#FFD700;
-
-margin:10px;
-
-text-shadow:0 0 18px gold;
-
-}
-
-#intro h2{
-
-font-size:22px;
-
-font-family:'Cinzel',serif;
-
-color:white;
-
-}
-
-#enterMagic{
-
-margin-top:35px;
-
-padding:15px 35px;
-
-border:none;
-
-border-radius:40px;
-
-background:#D4AF37;
-
-font-size:18px;
-
-font-weight:bold;
-
-cursor:pointer;
-
-transition:.4s;
-
-}
-
-#enterMagic:hover{
-
-transform:scale(1.08);
-
-box-shadow:0 0 25px gold;
-
-}
-
-#mainContent{
-
-display:none;
-
-}
-
-@keyframes fadeIn{
-
-from{
-
-opacity:0;
-
-}
-
-to{
-
-opacity:1;
 
 }
 
