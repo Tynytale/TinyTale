@@ -1,11 +1,11 @@
 {
-    "sources": {
-        "trailers": "https://gist.githubusercontent.com/Tynytale/3354c5355607624d3a58decf2afd904e/raw/",
-            "episode1": "https://gist.githubusercontent.com/Tynytale/dff612c6e65a8d6b3a9668838f4e6584/raw/",
-                "episode2": "https://gist.githubusercontent.com/Tynytale/1afad54131408405980a1672c6795060/raw/",
-                    "episode3": "https://gist.githubusercontent.com/Tynytale/1037a619177cf7aeb4985b721af9e938/raw/",
-                        "episode4": "https://gist.githubusercontent.com/Tynytale/aab2b6e2825dcaeba896652996f75a25/raw/",
-                            "episode5": "https://gist.githubusercontent.com/Tynytale/0b47e29b2b2c30dc7027b3aa29a46715/raw/",
-                                "episode6": "https://gist.githubusercontent.com/Tynytale/419c120673e3c1f8bce9a5c7f8a119b5/raw/"
-                                  }
+  "sources": {
+    "trailers": "https://gist.githubusercontent.com/Tynytale/3354c5355607624d3a58decf2afd904e/raw/",
+    "episode1": "https://gist.githubusercontent.com/Tynytale/dff612c6e65a8d6b3a9668838f4e6584/raw/",
+    "episode2": "https://gist.githubusercontent.com/Tynytale/1afad54131408405980a1672c6795060/raw/",
+    "episode3": "https://gist.githubusercontent.com/Tynytale/1037a619177cf7aeb4985b721af9e938/raw/",
+    "episode4": "https://gist.githubusercontent.com/Tynytale/aab2b6e2825dcaeba896652996f75a25/raw/",
+    "episode5": "https://gist.githubusercontent.com/Tynytale/0b47e29b2b2c30dc7027b3aa29a46715/raw/",
+    "episode6": "https://gist.githubusercontent.com/Tynytale/419c120673e3c1f8bce9a5c7f8a119b5/raw/"
+  }
 }
