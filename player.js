@@ -152,6 +152,15 @@ async function loadTrailer() {
 
     createButtons();
 
+    // --- Trailer -> Episode 1 Link ---
+    const ep1Btn = document.createElement("button");
+    ep1Btn.className = "partButton";
+    ep1Btn.textContent = "Watch Episode 1";
+    ep1Btn.style.backgroundColor = "#d4af37"; // Golden Color
+    ep1Btn.onclick = () => { window.location.href = "index.html?mode=episode&id=1"; };
+    partsContainer.appendChild(ep1Btn);
+    // ---------------------------------
+
     loadPart(0);
 
 }
