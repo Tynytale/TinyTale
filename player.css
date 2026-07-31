@@ -1,18 +1,83 @@
 /* =========================================================
-   TinyTale Player 2.0 - Finalized Horizontal Layout
+   TinyTale Player 2.0
+   player.css - Full Finalized Version
 ========================================================= */
 
-*{ margin:0; padding:0; box-sizing:border-box; }
-html{ scroll-behavior:smooth; }
-body{ font-family:'Poppins',sans-serif; color:#ffffff; background:#071014; overflow-x:hidden; min-height:100vh; }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-/* Background & Overlays */
-.background{ position:fixed; inset:0; background:linear-gradient(rgba(5,10,20,.72),rgba(5,10,20,.82)), url("assets/hogwarts.jpg"); background-size:cover; background-position:center; background-attachment:fixed; z-index:-3; }
-.overlay{ position:fixed; inset:0; background:radial-gradient(circle at top, rgba(255,215,0,.08), transparent 45%), linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.45)); backdrop-filter:blur(2px); z-index:-2; }
+html{
+    scroll-behavior:smooth;
+}
 
-/* Particles */
-.particles{ position:fixed; inset:0; pointer-events:none; overflow:hidden; z-index:-1; }
-.particles span{ position:absolute; bottom:-40px; width:5px; height:5px; border-radius:50%; background:#FFD54A; box-shadow:0 0 10px #FFD54A, 0 0 20px #FFD54A; animation:particleFloat linear infinite; }
+body{
+    font-family:'Poppins',sans-serif;
+    color:#ffffff;
+    background:#071014;
+    overflow-x:hidden;
+    min-height:100vh;
+}
+
+/* =========================
+   Background
+========================= */
+
+.background{
+    position:fixed;
+    inset:0;
+    background:
+    linear-gradient(rgba(5,10,20,.72),rgba(5,10,20,.82)),
+    url("assets/hogwarts.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    z-index:-3;
+}
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top,
+    rgba(255,215,0,.08),
+    transparent 45%),
+    linear-gradient(
+    rgba(0,0,0,.15),
+    rgba(0,0,0,.45)
+    );
+    backdrop-filter:blur(2px);
+    z-index:-2;
+}
+
+/* =========================
+   Particles
+========================= */
+
+.particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.particles span{
+    position:absolute;
+    bottom:-40px;
+    width:5px;
+    height:5px;
+    border-radius:50%;
+    background:#FFD54A;
+    box-shadow:
+    0 0 10px #FFD54A,
+    0 0 20px #FFD54A;
+    animation:particleFloat linear infinite;
+}
+
 .particles span:nth-child(1){left:5%;animation-duration:12s;}
 .particles span:nth-child(2){left:12%;animation-duration:9s;}
 .particles span:nth-child(3){left:18%;animation-duration:14s;}
@@ -25,47 +90,217 @@ body{ font-family:'Poppins',sans-serif; color:#ffffff; background:#071014; overf
 .particles span:nth-child(10){left:80%;animation-duration:9s;}
 .particles span:nth-child(11){left:90%;animation-duration:12s;}
 .particles span:nth-child(12){left:97%;animation-duration:15s;}
-@keyframes particleFloat{ from{ transform:translateY(0) scale(.4); opacity:0; } 20%{ opacity:1; } to{ transform:translateY(-120vh) scale(1); opacity:0; } }
 
-/* Loading Screen */
-#loadingScreen{ position:fixed; inset:0; background:#071014; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:25px; z-index:9999; }
-.loader{ width:70px; height:70px; border-radius:50%; border:5px solid rgba(255,255,255,.15); border-top:5px solid gold; animation:spin 1s linear infinite; }
-#loadingScreen h2{ font-family:'Cinzel',serif; color:#FFD54A; letter-spacing:2px; }
-@keyframes spin{ to{ transform:rotate(360deg); } }
+@keyframes particleFloat{
+    from{
+        transform:
+        translateY(0)
+        scale(.4);
+        opacity:0;
+    }
+    20%{
+        opacity:1;
+    }
+    to{
+        transform:
+        translateY(-120vh)
+        scale(1);
+        opacity:0;
+    }
+}
 
-/* Main Layout */
-.container{ width:min(100%,900px); margin:auto; padding:25px 18px 70px; display:none; }
-.header{ text-align:center; margin-bottom:25px; }
-.header h1{ font-family:'Cinzel',serif; color:#FFD54A; font-size:34px; text-shadow:0 0 10px gold, 0 0 30px rgba(255,215,0,.35); }
-#episodeInfo{ margin-top:10px; color:#d8d8d8; font-size:15px; }
+/* =========================
+   Loading Screen
+========================= */
 
-/* Video & Story */
-.videoCard{ width:100%; border-radius:24px; overflow:hidden; background:rgba(255,255,255,.08); backdrop-filter:blur(18px); border:1px solid rgba(255,255,255,.12); box-shadow:0 25px 60px rgba(0,0,0,.45); }
-.videoCard iframe{ width:100%; aspect-ratio:16/9; display:block; border:none; background:black; }
-.storyCard{ margin-top:28px; padding:24px; border-radius:22px; background:rgba(255,255,255,.08); backdrop-filter:blur(18px); border:1px solid rgba(255,255,255,.12); }
-.storyCard h2{ color:#FFD54A; font-family:'Cinzel',serif; margin-bottom:18px; }
-#storyContent{ line-height:1.9; color:#ececec; font-size:15px; word-break:break-word; }
+#loadingScreen{
+    position:fixed;
+    inset:0;
+    background:#071014;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:25px;
+    z-index:9999;
+}
 
-/* Navigation Buttons */
-.navigation{ display:flex; gap:15px; margin-top:28px; }
-.navigation button{ flex:1; padding:15px; border:none; border-radius:50px; cursor:pointer; font-size:15px; font-weight:600; font-family:'Poppins',sans-serif; color:#13231F; background:linear-gradient(135deg,#FFD54A,#FFC107); transition:.35s; box-shadow:0 10px 25px rgba(0,0,0,.30); }
-.navigation button:hover{ transform:translateY(-3px); box-shadow:0 0 18px gold, 0 15px 35px rgba(0,0,0,.40); }
-.navigation button:disabled{ opacity:.45; cursor:not-allowed; transform:none; box-shadow:none; }
+.loader{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    border:5px solid rgba(255,255,255,.15);
+    border-top:5px solid gold;
+    animation:spin 1s linear infinite;
+}
 
-/* Parts - Horizontal Scrolling */
-.partsSection{ margin-top:35px; }
-.partsSection h3{ text-align:center; font-family:'Cinzel',serif; color:#FFD54A; margin-bottom:18px; }
+#loadingScreen h2{
+    font-family:'Cinzel',serif;
+    color:#FFD54A;
+    letter-spacing:2px;
+}
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+/* =========================
+   Main Layout
+========================= */
+
+.container{
+    width:min(100%,900px);
+    margin:auto;
+    padding:25px 18px 70px;
+    display:none;
+}
+
+.header{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.header h1{
+    font-family:'Cinzel',serif;
+    color:#FFD54A;
+    font-size:34px;
+    text-shadow:
+    0 0 10px gold,
+    0 0 30px rgba(255,215,0,.35);
+}
+
+#episodeInfo{
+    margin-top:10px;
+    color:#d8d8d8;
+    font-size:15px;
+}
+
+/* =========================
+   Video Card
+========================= */
+
+.videoCard{
+    width:100%;
+    border-radius:24px;
+    overflow:hidden;
+    background:
+    rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border:
+    1px solid
+    rgba(255,255,255,.12);
+    box-shadow:
+    0 25px 60px
+    rgba(0,0,0,.45);
+}
+
+.videoCard iframe{
+    width:100%;
+    aspect-ratio:16/9;
+    display:block;
+    border:none;
+    background:black;
+}
+
+/* =========================
+   Story Card
+========================= */
+
+.storyCard{
+    margin-top:28px;
+    padding:24px;
+    border-radius:22px;
+    background:
+    rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border:
+    1px solid
+    rgba(255,255,255,.12);
+}
+
+.storyCard h2{
+    color:#FFD54A;
+    font-family:'Cinzel',serif;
+    margin-bottom:18px;
+}
+
+#storyContent{
+    line-height:1.9;
+    color:#ececec;
+    font-size:15px;
+    word-break:break-word;
+}
+
+/* =========================
+   Navigation
+========================= */
+
+.navigation{
+    display:flex;
+    gap:15px;
+    margin-top:28px;
+}
+
+.navigation button{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+    font-family:'Poppins',sans-serif;
+    color:#13231F;
+    background:linear-gradient(135deg,#FFD54A,#FFC107);
+    transition:.35s;
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.30);
+}
+
+.navigation button:hover{
+    transform:translateY(-3px);
+    box-shadow:
+    0 0 18px gold,
+    0 15px 35px rgba(0,0,0,.40);
+}
+
+.navigation button:active{
+    transform:scale(.97);
+}
+
+.navigation button:disabled{
+    opacity:.45;
+    cursor:not-allowed;
+    transform:none;
+    box-shadow:none;
+}
+
+/* =========================
+   Parts (Horizontal Scroll)
+========================= */
+
+.partsSection{
+    margin-top:35px;
+}
+
+.partsSection h3{
+    text-align:center;
+    font-family:'Cinzel',serif;
+    color:#FFD54A;
+    margin-bottom:18px;
+}
 
 #partsContainer{
     display: flex;
     overflow-x: auto;
     gap: 12px;
     padding-bottom: 10px;
-    white-space: nowrap;
     scrollbar-width: thin;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
 }
-#partsContainer::-webkit-scrollbar { height: 6px; }
-#partsContainer::-webkit-scrollbar-thumb { background: #FFD54A; border-radius: 10px; }
 
 .partButton{
     flex: 0 0 auto;
@@ -77,19 +312,172 @@ body{ font-family:'Poppins',sans-serif; color:#ffffff; background:#071014; overf
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255,255,255,.10);
     cursor: pointer;
-    transition: 0.35s;
+    transition: .35s;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
 }
-.partButton:hover{ background:#FFD54A; color:#13231F; transform:translateY(-3px); box-shadow:0 0 15px gold; }
-.partButton.active{ background:linear-gradient(135deg,#FFD54A,#FFC107); color:#13231F; font-weight:700; box-shadow:0 0 20px gold; }
 
-/* Popup & Scrollbar & Mobile */
-#popup{ position:fixed; inset:0; background:rgba(0,0,0,.70); display:none; justify-content:center; align-items:center; z-index:999; padding:20px; }
-.popupBox{ width:min(100%,420px); background:rgba(18,30,40,.95); border-radius:22px; padding:30px; text-align:center; border:1px solid rgba(255,255,255,.10); box-shadow:0 20px 50px rgba(0,0,0,.50); animation:popupScale .35s ease; }
-#closePopup{ margin-top:25px; border:none; cursor:pointer; padding:13px 30px; border-radius:50px; background:linear-gradient(135deg,#FFD54A,#FFC107); color:#13231F; font-weight:700; }
-@keyframes popupScale{ from{ opacity:0; transform:scale(.85); } to{ opacity:1; transform:scale(1); } }
-::-webkit-scrollbar{ width:8px; }
-::-webkit-scrollbar-track{ background:#081218; }
-::-webkit-scrollbar-thumb{ background:#FFD54A; border-radius:20px; }
-@media (max-width:768px){ .navigation{ flex-direction:column; } .navigation button{ width:100%; } }
+.partButton:hover{
+    background:#FFD54A;
+    color:#13231F;
+    transform:translateY(-3px);
+    box-shadow: 0 0 15px gold;
+}
+
+.partButton.active{
+    background: linear-gradient(135deg,#FFD54A,#FFC107);
+    color:#13231F;
+    font-weight:700;
+    box-shadow: 0 0 20px gold;
+}
+
+/* =========================
+   Popup
+========================= */
+
+#popup{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.70);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+    padding:20px;
+}
+
+.popupBox{
+    width:min(100%,420px);
+    background:
+    rgba(18,30,40,.95);
+    border-radius:22px;
+    padding:30px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,.10);
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.50);
+    animation:popupScale .35s ease;
+}
+
+.popupBox h2{
+    color:#FFD54A;
+    font-family:'Cinzel',serif;
+    margin-bottom:15px;
+}
+
+.popupBox p{
+    color:#dddddd;
+    line-height:1.8;
+}
+
+#closePopup{
+    margin-top:25px;
+    border:none;
+    cursor:pointer;
+    padding:13px 30px;
+    border-radius:50px;
+    background:
+    linear-gradient(135deg,#FFD54A,#FFC107);
+    color:#13231F;
+    font-weight:700;
+    transition:.3s;
+}
+
+#closePopup:hover{
+    transform:translateY(-2px);
+    box-shadow:
+    0 0 15px gold;
+}
+
+@keyframes popupScale{
+    from{
+        opacity:0;
+        transform:scale(.85);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* =========================
+   Scrollbar
+========================= */
+
+::-webkit-scrollbar{
+    width:8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#081218;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#FFD54A;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#FFC107;
+}
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width:768px){
+.header h1{
+    font-size:28px;
+}
+.storyCard{
+    padding:18px;
+}
+.navigation{
+    flex-direction:column;
+}
+.navigation button{
+    width:100%;
+}
+}
+
+@media (max-width:480px){
+.container{
+    padding:18px 12px 50px;
+}
+.header h1{
+    font-size:24px;
+}
+#episodeInfo{
+    font-size:14px;
+}
+.storyCard{
+    padding:16px;
+}
+.storyCard h2{
+    font-size:20px;
+}
+#storyContent{
+    font-size:14px;
+    line-height:1.8;
+}
+.partButton{
+    padding:13px;
+}
+.loader{
+    width:60px;
+    height:60px;
+}
+#loadingScreen h2{
+    font-size:20px;
+}
+}
+
+@media (min-width:1200px){
+.container{
+    max-width:1000px;
+}
+.header h1{
+    font-size:40px;
+}
+}
