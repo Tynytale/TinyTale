@@ -206,7 +206,7 @@ function loadPart(index) {
 
         : part.title;
 
-    // --- Meka thamai mama add kare ---
+    // --- FIX: Video eka hide/show logic ---
     if (part.video && part.video.trim() !== "") {
         player.style.display = "block";
         player.src = part.video;
@@ -214,7 +214,7 @@ function loadPart(index) {
         player.style.display = "none";
         player.src = "";
     }
-    // ---------------------------------
+    // -------------------------------------
 
     loadStory(part.story);
 
