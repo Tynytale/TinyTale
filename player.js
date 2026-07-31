@@ -1,7 +1,8 @@
-// ===============================
-// TinyTale Player v3.0 - Finalized
-// ===============================
+// =============================================================================
+// TinyTale Player v4.0 - Full Source Code
+// =============================================================================
 
+// --- DOM Elements ---
 const title = document.getElementById("episodeTitle");
 const info = document.getElementById("episodeInfo");
 const player = document.getElementById("videoPlayer");
@@ -14,98 +15,138 @@ const closePopup = document.getElementById("closePopup");
 const loadingScreen = document.getElementById("loadingScreen");
 const playerContainer = document.getElementById("playerContainer");
 
+// --- Runtime Global Variables ---
 let sources = {};
 let currentList = [];
 let currentIndex = 0;
 let currentTitle = "";
 
+// --- URL Parameter Handling ---
 const params = new URLSearchParams(window.location.search);
-const mode = params.get("mode") || "episode";
+const mode = params.get("mode") || "episode"; // 'trailer' or 'episode'
 const id = params.get("id") || "1";
 
-// --- Popup Logic ---
-function showPopup() { popup.style.display = "flex"; }
-function hidePopup() { popup.style.display = "none"; }
+// =============================================================================
+// UI & Loading Handlers
+// =============================================================================
+
+function showPopup() {
+    popup.style.display = "flex";
+}
+
+function hidePopup() {
+    popup.style.display = "none";
+}
+
 closePopup.onclick = hidePopup;
-popup.onclick = (e) => { if (e.target === popup) hidePopup(); };
 
-// --- Loading Logic ---
-function showLoading() { loadingScreen.style.display = "flex"; playerContainer.style.display = "none"; }
-function hideLoading() { loadingScreen.style.display = "none"; playerContainer.style.display = "block"; }
+popup.onclick = (e) => {
+    if (e.target === popup) hidePopup();
+};
 
-// --- Fetching Data ---
+function showLoading() {
+    loadingScreen.style.display = "flex";
+    playerContainer.style.display = "none";
+}
+
+function hideLoading() {
+    loadingScreen.style.display = "none";
+    playerContainer.style.display = "block";
+}
+
+// =============================================================================
+// Data Fetching Logic
+// =============================================================================
+
 async function loadSources() {
-    const response = await fetch("episodes.json");
-    const json = await response.json();
-    sources = json.sources;
+    try {
+        const response = await fetch("episodes.json");
+        if (!response.ok) throw new Error("episodes.json failed");
+        const json = await response.json();
+        sources = json.sources;
+    } catch (err) {
+        console.error("Error loading sources:", err);
+    }
 }
 
 async function fetchJSON(url) {
     const response = await fetch(url);
+    if (!response.ok) throw new Error("Failed to fetch: " + url);
     return await response.json();
 }
 
-function loadStory(text) {
-    if (!text || text.trim() === "") {
-        story.innerHTML = "<h3>Coming Soon...</h3>";
-        return;
-    }
-    story.innerHTML = text.replace(/\n/g, "<br>");
-}
+// =============================================================================
+// Trailer & Episode Logic (Parity Fix)
+// =============================================================================
 
-// --- Load Trailer ---
 async function loadTrailer() {
-    const json = await fetchJSON(sources.trailers);
-    const trailer = json[id];
+    try {
+        const json = await fetchJSON(sources.trailers);
+        const trailerData = json[id];
 
-    if (!trailer) {
-        title.textContent = "Trailer Not Found";
-        hideLoading();
-        return;
+        if (!trailerData) {
+            title.textContent = "Trailer Not Found";
+            hideLoading();
+            return;
+        }
+
+        currentTitle = trailerData.title;
+        // Check if trailer has multiple parts, if not wrap in array
+        currentList = trailerData.parts || [{
+            title: trailerData.title,
+            video: trailerData.video,
+            story: trailerData.story
+        }];
+
+        createButtons();
+
+        // Specific Logic for Trailer: Add "Watch Episode 1" link
+        const ep1Btn = document.createElement("button");
+        ep1Btn.className = "partButton";
+        ep1Btn.textContent = "Watch Episode 1";
+        ep1Btn.style.background = "linear-gradient(135deg, #FFD54A, #FFC107)";
+        ep1Btn.style.color = "#13231F";
+        ep1Btn.onclick = () => { window.location.href = "index.html?mode=episode&id=1"; };
+        partsContainer.appendChild(ep1Btn);
+
+        loadPart(0);
+    } catch (e) {
+        console.error("Error in loadTrailer:", e);
     }
-
-    currentTitle = trailer.title;
-    currentList = [{
-        title: trailer.title,
-        video: trailer.video,
-        story: trailer.story
-    }];
-
-    createButtons();
-
-    // Button to link to Episode 1
-    const ep1Btn = document.createElement("button");
-    ep1Btn.className = "partButton";
-    ep1Btn.textContent = "Watch Episode 1";
-    ep1Btn.style.backgroundColor = "#d4af37";
-    ep1Btn.onclick = () => { window.location.href = "index.html?mode=episode&id=1"; };
-    partsContainer.appendChild(ep1Btn);
-
-    loadPart(0);
 }
 
-// --- Load Episode ---
 async function loadEpisode() {
-    const key = "episode" + id;
-    if (!sources[key]) {
-        title.textContent = "Episode Not Found";
-        hideLoading();
-        return;
+    try {
+        const key = "episode" + id;
+        if (!sources[key]) {
+            title.textContent = "Episode Not Found";
+            hideLoading();
+            return;
+        }
+        const json = await fetchJSON(sources[key]);
+        currentTitle = json.title;
+        currentList = json.parts;
+        
+        createButtons();
+        loadPart(0);
+    } catch (e) {
+        console.error("Error in loadEpisode:", e);
     }
-    const json = await fetchJSON(sources[key]);
-    currentTitle = json.title;
-    currentList = json.parts;
-    createButtons();
-    loadPart(0);
 }
 
-// --- Load Current Part ---
+// =============================================================================
+// Core Player Logic
+// =============================================================================
+
 function loadPart(index) {
     currentIndex = index;
     const part = currentList[index];
+    
+    // Update Title
     title.textContent = currentTitle;
-    info.textContent = mode === "trailer" ? "Trailer" : part.title;
+    info.textContent = part.title;
 
+    // Handle Video Visibility
     if (part.video && part.video.trim() !== "") {
         player.style.display = "block";
         player.src = part.video;
@@ -114,18 +155,25 @@ function loadPart(index) {
         player.src = "";
     }
 
-    loadStory(part.story);
+    // Load Story
+    if (!part.story || part.story.trim() === "") {
+        story.innerHTML = "<h3>Coming Soon...</h3>";
+    } else {
+        story.innerHTML = part.story.replace(/\n/g, "<br>");
+    }
 
+    // Handle Button Active State
     document.querySelectorAll(".partButton").forEach(btn => btn.classList.remove("active"));
     const active = document.getElementById("part-" + index);
     if (active) active.classList.add("active");
 
+    // Navigation state
     prevBtn.disabled = (index === 0);
     nextBtn.disabled = (index === currentList.length - 1);
+    
     hideLoading();
 }
 
-// --- Create Buttons ---
 function createButtons() {
     partsContainer.innerHTML = "";
     currentList.forEach((part, index) => {
@@ -134,28 +182,32 @@ function createButtons() {
         button.id = "part-" + index;
         button.textContent = part.title;
         button.onclick = () => {
-            if (!part.video) { showPopup(); return; }
+            if (!part.video && !part.story) { showPopup(); return; }
             loadPart(index);
         };
         partsContainer.appendChild(button);
     });
 }
 
-// --- Navigation ---
+// =============================================================================
+// Navigation & Initialization
+// =============================================================================
+
 prevBtn.onclick = () => { if (currentIndex > 0) loadPart(currentIndex - 1); };
 nextBtn.onclick = () => { if (currentIndex < currentList.length - 1) loadPart(currentIndex + 1); };
 
-// --- Startup ---
 async function start() {
     showLoading();
     try {
         await loadSources();
-        if (mode === "trailer") { await loadTrailer(); } 
-        else { await loadEpisode(); }
+        if (mode === "trailer") {
+            await loadTrailer();
+        } else {
+            await loadEpisode();
+        }
     } catch (error) {
         console.error(error);
         title.textContent = "Loading Failed";
-        story.innerHTML = "<h3>Unable to load content.</h3>";
         hideLoading();
     }
 }
@@ -167,4 +219,5 @@ document.addEventListener("keydown", (e) => {
 
 document.addEventListener("contextmenu", (e) => e.preventDefault());
 
+// Start the process
 start();
