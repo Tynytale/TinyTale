@@ -479,22 +479,20 @@ body{
 
 #partsContainer{
 
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
+    display:flex;
+    overflow-x:auto;
     gap:14px;
+    padding-bottom:10px;
+    scrollbar-width: thin;
 
 }
 
 .partButton{
 
-    padding:14px 10px;
-
+    flex: 0 0 auto;
+    padding:14px 20px;
     border:none;
-
     border-radius:40px;
-
     background:
 
     rgba(255,255,255,.08);
@@ -514,6 +512,7 @@ body{
     font-family:'Poppins',sans-serif;
 
     font-weight:500;
+    white-space: nowrap;
 
 }
 
@@ -674,6 +673,7 @@ body{
 ::-webkit-scrollbar{
 
     width:8px;
+    height: 8px;
 
 }
 
@@ -712,12 +712,6 @@ body{
 .storyCard{
 
     padding:18px;
-
-}
-
-#partsContainer{
-
-    grid-template-columns:repeat(2,1fr);
 
 }
 
@@ -772,12 +766,6 @@ body{
     font-size:14px;
 
     line-height:1.8;
-
-}
-
-#partsContainer{
-
-    grid-template-columns:1fr;
 
 }
 
